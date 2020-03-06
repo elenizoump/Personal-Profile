@@ -1,8 +1,11 @@
 import React from 'react';
+import ReactDOM from "react-dom";
+import { Router, Link } from "@reach/router";
 import logo from './logo.svg';
 import './App.css';
+import FirstPage from "./FirstPage"
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -19,8 +22,13 @@ function App() {
           Learn React
         </a>
       </header>
+      
+        <Router>
+          <FirstPage path="/" />
+        </Router>
+      
     </div>
   );
 }
 
-export default App;
+ReactDOM.render(<App />, document.getElementById("root"));
